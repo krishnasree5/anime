@@ -1,6 +1,8 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import "./index.css";
+
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
@@ -13,7 +15,7 @@ const anilist = [
   {
     id: 2,
     img: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
-    title: "Shingeki no Kyojin",
+    title: "Attack On Titan",
   },
   {
     id: 3,
@@ -59,19 +61,22 @@ const anilist = [
 
 const App = () => {
   return (
-    <div id="container">
-      {anilist.map((a) => {
-        return <Card img={a.img} title={a.title} key={a.id} />;
-      })}
+    <>
+      <h1>My Anime List</h1>
+      <div id="container">
+        {anilist.map((a) => {
+          return <Card img={a.img} title={a.title} key={a.id} />;
+        })}
+      </div>
       <p>And many more...</p>
-    </div>
+    </>
   );
 };
 
 const Card = ({ img, title }) => {
   return (
     <div id="item">
-      <img src={img} />
+      <img src={img} alt="anime poster" />
       <p>{title}</p>
     </div>
   );
@@ -80,5 +85,5 @@ const Card = ({ img, title }) => {
 root.render(
   <StrictMode>
     <App />
-  </StrictMode>
+  </StrictMode>,
 );
