@@ -2,6 +2,16 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
+import img1 from "../src/assets/images/img1.jpg";
+import img2 from "../src/assets/images/img2.jpg";
+import img3 from "../src/assets/images/img3.jpg";
+import img4 from "../src/assets/images/img4.jpg";
+import img5 from "../src/assets/images/img5.jpg";
+import img6 from "../src/assets/images/img6.jpg";
+import img7 from "../src/assets/images/img7.jpg";
+import img8 from "../src/assets/images/img8.jpg";
+import img9 from "../src/assets/images/img9.jpg";
+import img10 from "../src/assets/images/img10.jpg";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
@@ -9,52 +19,52 @@ const root = createRoot(rootElement);
 const anilist = [
   {
     id: 1,
-    img: "https://cdn.myanimelist.net/images/anime/1517/92767l.jpg",
+    img: img1,
     title: "Tokyo Ghoul",
   },
   {
     id: 2,
-    img: "https://cdn.myanimelist.net/images/anime/10/47347.jpg",
+    img: img2,
     title: "Attack On Titan",
   },
   {
     id: 3,
-    img: "https://cdn.myanimelist.net/images/anime/1129/135442.jpg",
+    img: img3,
     title: "Cyberpunk: Edgerunners",
   },
   {
     id: 4,
-    img: "https://cdn.myanimelist.net/images/anime/10/77957.jpg",
+    img: img4,
     title: "Erased",
   },
   {
     id: 5,
-    img: "https://cdn.myanimelist.net/images/anime/4/75509.jpg",
+    img: img5,
     title: "Another",
   },
   {
     id: 6,
-    img: "https://cdn.myanimelist.net/images/anime/1171/109222.jpg",
+    img: img6,
     title: "Jujutsu Kaisen",
   },
   {
     id: 7,
-    img: "https://cdn.myanimelist.net/images/anime/1458/113542.jpg",
+    img: img7,
     title: "Link Click",
   },
   {
     id: 8,
-    img: "https://cdn.myanimelist.net/images/anime/9/9453.jpg",
+    img: img8,
     title: "Death Note",
   },
   {
     id: 9,
-    img: "https://cdn.myanimelist.net/images/anime/3/10243.jpg",
+    img: img9,
     title: "Serial Experiments Lain",
   },
   {
     id: 10,
-    img: "https://cdn.myanimelist.net/images/anime/5/29347.jpg",
+    img: img10,
     title: "Ergo Proxy",
   },
 ];
