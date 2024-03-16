@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
 
 import "./index.css";
@@ -89,7 +89,7 @@ const App = () => {
         {anilist.map((a) => {
           const { id, img, title } = a;
           return (
-            <div key={id}>
+            <div key={id} id="item">
               <img src={img} alt="anime poster" />
               <p>{title}</p>
               <button className="add" onClick={() => addToWatchlist(id)}>
@@ -105,7 +105,7 @@ const App = () => {
         {watchlist.map((a) => {
           const { id, img, title } = a;
           return (
-            <div key={id}>
+            <div key={id} id="item">
               <img src={img} alt="anime poster" />
               <p>{title}</p>
               <button
