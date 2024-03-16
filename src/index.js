@@ -70,25 +70,55 @@ const anilist = [
 ];
 
 const App = () => {
+  const [watchlist, setWatchlist] = useState([]);
+
+  const addToWatchlist = (id) => {
+    const anime = anilist.find((a) => a.id === id);
+    setWatchlist([...watchlist, anime]);
+  };
+
+  const removeFromWatchlist = (id) => {
+    const newWatchlist = watchlist.filter((a) => a.id !== id);
+    setWatchlist(newWatchlist);
+  };
+
   return (
     <>
       <h1>My Anime List</h1>
       <div id="container">
         {anilist.map((a) => {
-          return <Card img={a.img} title={a.title} key={a.id} />;
+          const { id, img, title } = a;
+          return (
+            <div key={id}>
+              <img src={img} alt="anime poster" />
+              <p>{title}</p>
+              <button className="add" onClick={() => addToWatchlist(id)}>
+                Add to Watchlist
+              </button>
+            </div>
+          );
         })}
       </div>
       <p>And many more...</p>
+      <h1>Your Watchlist </h1>
+      <div id="container">
+        {watchlist.map((a) => {
+          const { id, img, title } = a;
+          return (
+            <div key={id}>
+              <img src={img} alt="anime poster" />
+              <p>{title}</p>
+              <button
+                className="remove"
+                onClick={() => removeFromWatchlist(id)}
+              >
+                Remove from Watchlist
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </>
-  );
-};
-
-const Card = ({ img, title }) => {
-  return (
-    <div id="item">
-      <img src={img} alt="anime poster" />
-      <p>{title}</p>
-    </div>
   );
 };
 
