@@ -1,5 +1,6 @@
 import { StrictMode, useState } from "react";
 import { createRoot } from "react-dom/client";
+import Card from "./Card";
 
 import "./index.css";
 import img1 from "../src/assets/images/img1.jpg";
@@ -85,36 +86,24 @@ const App = () => {
   return (
     <>
       <h1>My Anime List</h1>
-      <div id="container">
+      <div id="container" className="List">
         {anilist.map((a) => {
           const { id, img, title } = a;
           return (
-            <div key={id} id="item">
-              <img src={img} alt="anime poster" />
-              <p>{title}</p>
-              <button className="add" onClick={() => addToWatchlist(id)}>
-                Add to Watchlist
-              </button>
-            </div>
+            <Card key={id} id={id} img={img} title={title}>
+              <button onClick={() => addToWatchlist(id)}>Add</button>
+            </Card>
           );
         })}
       </div>
-      <p>And many more...</p>
       <h1>Your Watchlist </h1>
-      <div id="container">
+      <div id="container" className="Watchlist">
         {watchlist.map((a) => {
           const { id, img, title } = a;
           return (
-            <div key={id} id="item">
-              <img src={img} alt="anime poster" />
-              <p>{title}</p>
-              <button
-                className="remove"
-                onClick={() => removeFromWatchlist(id)}
-              >
-                Remove from Watchlist
-              </button>
-            </div>
+            <Card key={id} id={id} img={img} title={title}>
+              <button onClick={() => removeFromWatchlist(id)}>Remove</button>
+            </Card>
           );
         })}
       </div>

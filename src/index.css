@@ -1,5 +1,5 @@
 body {
-  background-color: #ece6e0;
+  background-color: #f2f2f2;
   color: #000000;
   margin: 0;
   padding: 1rem;
@@ -12,7 +12,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 3rem;
-  background-color: #c5d9ea;
+  background-color: #ffffff;
   border-radius: 5px;
   padding: 3rem;
 }
@@ -21,7 +21,7 @@ body {
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
-  background-color: #d9e9f6;
+  background-color: #f8f8f8;
   border-radius: 5px;
   padding: 1rem;
 }
@@ -33,7 +33,8 @@ img {
 }
 
 button {
-  background-color: hsl(0, 75%, 60%);
+  background-color: #3f51b5;
+  color: #ffffff;
   border-radius: 10px;
   border: none;
   font-size: 1rem;
