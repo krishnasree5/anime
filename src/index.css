@@ -1,6 +1,4 @@
 body {
-  background-color: #f2f2f2;
-  color: #000000;
   margin: 0;
   padding: 1rem;
   font-family: "Madimi One", sans-serif;
@@ -8,12 +6,36 @@ body {
   font-style: normal;
 }
 
+#header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#search {
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 25px;
+  border: 1px solid black;
+  outline: none;
+}
+
+#watchlist,
+#top-anime,
+#header {
+  padding: 1rem;
+  margin: 2rem;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 2rem;
+  background-color: #fbf9f1;
+}
+
 #container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   grid-gap: 3rem;
-  background-color: #ffffff;
-  border-radius: 5px;
   padding: 3rem;
 }
 
@@ -21,9 +43,15 @@ body {
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
-  background-color: #f8f8f8;
   border-radius: 5px;
   padding: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+}
+
+#item:hover {
+  transform: scale(1.1);
 }
 
 img {
@@ -33,11 +61,12 @@ img {
 }
 
 button {
-  background-color: #3f51b5;
-  color: #ffffff;
   border-radius: 10px;
   border: none;
   font-size: 1rem;
   padding: 0.75rem;
   margin-top: 1rem;
+  cursor: pointer;
+  background-color: #595b83;
+  color: white;
 }
