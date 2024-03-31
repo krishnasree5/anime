@@ -1,1 +1,1 @@
-List of anime that i watched.
+Discover Anime!
