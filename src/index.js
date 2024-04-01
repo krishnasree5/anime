@@ -1,6 +1,10 @@
 import { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
-import Card from "./Card";
+
+import Header from "./Header";
+import HomePage from "./HomePage";
+import WatchList from "./WatchList";
+
 import "./index.css";
 
 const rootElement = document.getElementById("root");
@@ -48,38 +52,12 @@ const App = () => {
 
   return (
     <>
-      <div id="header">
-        <h1>Anime Companion</h1>
-        <input id="search" type="text" placeholder="Search" />
-      </div>
-
-      <div id="top-anime">
-        <h2>Top Anime</h2>
-        <div id="container">
-          {anilist.map((a) => {
-            const { id, img, title } = a;
-            return (
-              <Card key={id} id={id} img={img} title={title}>
-                <button onClick={() => addToWatchlist(id)}>Add</button>
-              </Card>
-            );
-          })}
-        </div>
-      </div>
-
-      <div id="watchlist">
-        <h2>Your Watchlist </h2>
-        <div id="container">
-          {watchlist.map((a) => {
-            const { id, img, title } = a;
-            return (
-              <Card key={id} id={id} img={img} title={title}>
-                <button onClick={() => removeFromWatchlist(id)}>Remove</button>
-              </Card>
-            );
-          })}
-        </div>
-      </div>
+      <Header />
+      <HomePage anilist={anilist} addToWatchlist={addToWatchlist} />
+      <WatchList
+        watchlist={watchlist}
+        removeFromWatchlist={removeFromWatchlist}
+      />
     </>
   );
 };

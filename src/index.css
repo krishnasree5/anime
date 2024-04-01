@@ -4,6 +4,8 @@ body {
   font-family: "Madimi One", sans-serif;
   font-weight: 400;
   font-style: normal;
+  color: #eeeeee;
+  background-color: #222831;
 }
 
 #header {
@@ -29,7 +31,7 @@ body {
   border-radius: 5px;
   padding: 1rem;
   margin: 2rem;
-  background-color: #fbf9f1;
+  background-color: #31363f;
 }
 
 #container {
@@ -45,9 +47,10 @@ body {
   font-size: 1.5rem;
   border-radius: 5px;
   padding: 1rem;
-  background-color: white;
+  background-color: #76abae;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out;
+  color: black;
 }
 
 #item:hover {
@@ -67,6 +70,6 @@ button {
   padding: 0.75rem;
   margin-top: 1rem;
   cursor: pointer;
-  background-color: #595b83;
+  background-color: #27374d;
   color: white;
 }
