@@ -2,7 +2,7 @@ import { StrictMode, useState, useEffect } from "react";
 import { createRoot } from "react-dom/client";
 
 import Header from "./Header";
-import HomePage from "./HomePage";
+import MainPage from "./MainPage";
 import WatchList from "./WatchList";
 
 import "./index.css";
@@ -10,35 +10,32 @@ import "./index.css";
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
-const url = "https://api.jikan.moe/v4/top/anime";
-const searchUrl = "https://api.jikan.moe/v4/anime?q=";
-
 const App = () => {
+  const TopAnimeUrl = "https://api.jikan.moe/v4/top/anime";
   const [anilist, setAnilist] = useState([]);
   const [watchlist, setWatchlist] = useState([]);
 
-  useEffect(() => {
-    const anilist = [];
+  const fetchAnime = async (url) => {
+    const dummy = [];
+    const res = await fetch(url);
+    const data = await res.json();
+    const topAnime = data.data;
 
-    const fetchAnime = async () => {
-      const res = await fetch(url);
-      const data = await res.json();
-      const topAnime = data.data;
+    topAnime.forEach((a) => {
+      const someAnime = {
+        id: a.mal_id,
+        img: a.images.jpg.image_url,
+        title: a.title,
+      };
+      dummy.push(someAnime);
+    });
 
-      topAnime.forEach((a) => {
-        const someAnime = {
-          id: a.mal_id,
-          img: a.images.jpg.image_url,
-          title: a.title,
-        };
-        anilist.push(someAnime);
-      });
+    setAnilist(dummy);
+  };
 
-      setAnilist(anilist);
-    };
-
-    fetchAnime();
-  }, []);
+  useState(() => {
+    fetchAnime(TopAnimeUrl);
+  });
 
   const addToWatchlist = (id) => {
     const anime = anilist.find((a) => a.id === id);
@@ -52,8 +49,12 @@ const App = () => {
 
   return (
     <>
-      <Header />
-      <HomePage anilist={anilist} addToWatchlist={addToWatchlist} />
+      <Header
+        fetchAnime={fetchAnime}
+        anilist={anilist}
+        setAnilist={setAnilist}
+      />
+      <MainPage anilist={anilist} addToWatchlist={addToWatchlist} />
       <WatchList
         watchlist={watchlist}
         removeFromWatchlist={removeFromWatchlist}

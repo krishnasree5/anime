@@ -1,9 +1,9 @@
 import Card from "../Card";
 
-const HomePage = ({ anilist, addToWatchlist }) => {
+const MainPage = ({ anilist, addToWatchlist }) => {
   return (
-    <div id="top-anime">
-      <h2>Top Anime</h2>
+    <div id="outer-container">
+      <h2>For You</h2>
       <div id="container">
         {anilist.map((a) => {
           const { id, img, title } = a;
@@ -18,4 +18,4 @@ const HomePage = ({ anilist, addToWatchlist }) => {
   );
 };
 
-export default HomePage;
+export default MainPage;

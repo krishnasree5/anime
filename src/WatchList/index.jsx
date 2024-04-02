@@ -2,7 +2,7 @@ import Card from "../Card";
 
 const WatchList = ({ watchlist, removeFromWatchlist }) => {
   return (
-    <div id="watchlist">
+    <div id="outer-container">
       <h2>Your Watchlist </h2>
       <div id="container">
         {watchlist.map((a) => {
