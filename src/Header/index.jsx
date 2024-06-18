@@ -20,6 +20,7 @@ const Header = ({ fetchAnime }) => {
         <div>
           <input id="search" type="text" placeholder="Search" />
           <button
+            id="search-button"
             type="button"
             onClick={() =>
               fetchAnime(searchUrl + document.getElementById("search").value) +
@@ -32,7 +33,9 @@ const Header = ({ fetchAnime }) => {
 
         <div>
           <Link to="/watchlist">
-            <button type="button">Watchlist</button>
+            <button type="button" id="watchlist-button">
+              Watchlist
+            </button>
           </Link>
         </div>
       </div>
