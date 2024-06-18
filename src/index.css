@@ -55,7 +55,8 @@ button:active {
   top: 1px;
 }
 
-#header {
+#header,
+#right {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
